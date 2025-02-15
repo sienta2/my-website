@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会員登録ページ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="images/logo.webp" alt="お店のロゴ" class="logo">
+        <h1 class="title">会員登録</h1>
+    </header>
+
+    <main>
+        <!-- 会員登録フォームの追加 -->
+        <section class="membership-form">
+            <h2>会員登録フォーム</h2>
+            <form id="register-form" action="#" method="post">
+                <label for="name">名前</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">パスワード</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="登録">
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+            // 必要な処理をここに追加
+            window.location.href = 'products.html'; // 商品ページにリダイレクト
+        });
+    </script>
+
+</body>
+</html>

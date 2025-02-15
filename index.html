@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お店のホームページ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="images/logo.webp" alt="お店のロゴ" class="logo">
+        <h1 class="title">ようこそ！</h1>
+    </header>
+
+    <main>
+        <p>お店の紹介や商品の情報を掲載</p>
+        
+        <!-- 会員セクションの追加 -->
+        <section class="membership">
+            <h2>会員登録のご案内</h2>
+            <p>会員になると、お得な情報や特典がもらえます。</p>
+            <a href="membership.html" class="menu-button">会員登録はこちら</a>
+        </section>
+
+        <!-- 商品セクションの追加 -->
+        <section class="products">
+            <div class="product-item">
+                <span class="product-name">test0</span>
+                <span class="product-price">￥0</span>
+            </div>
+            <div class="product-item">
+                <span class="product-name">name**ipアドレス</span>
+                <span class="product-price">￥0</span>
+            </div>
+            <div class="product-item">
+                <span class="product-name">ipアドレストロピカル</span>
+                <span class="product-price">￥0</span>
+            </div>
+        </section>
+
+        <!-- 現在地表示の追加 -->
+        <div class="location" id="location"></div>
+
+        <!-- メニューボタンの追加 -->
+        <div class="menu-buttons">
+            <a href="#" class="menu-button" onclick="showPage('home-page')">ホーム</a>
+            <a href="#" class="menu-button" onclick="showPage('products-page')">商品</a>
+            <a href="membership.html" class="menu-button">会員情報</a>
+            <a href="#" class="menu-button" onclick="showPage('contact-page')">お問い合わせ</a>
+        </div>
+    </main>
+
+    <script>
+        // 現在地取得
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const locationElement = document.getElementById('location');
+                locationElement.textContent = `現在地: 緯度 ${lat}, 経度 ${lon}`;
+            }, function() {
+                alert('現在地情報を取得できませんでした。');
+            });
+        } else {
+            alert('現在地情報を取得できるブラウザではありません。');
+        }
+    </script>
+
+</body>
+</html>

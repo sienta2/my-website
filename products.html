@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品ページ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="images/logo.webp" alt="お店のロゴ" class="logo">
+        <h1 class="title">商品ページ</h1>
+    </header>
+
+    <main>
+        <section class="products">
+            <div class="product-item">
+                <span class="product-name">test0</span>
+                <span class="product-price">￥0</span>
+            </div>
+            <div class="product-item">
+                <span class="product-name">name**ipアドレス</span>
+                <span class="product-price">￥0</span>
+            </div>
+            <div class="product-item">
+                <span class="product-name">ipアドレストロピカル</span>
+                <span class="product-price">￥0</span>
+            </div>
+            <!-- 購入ボタン -->
+            <div class="product-item">
+                <button class="menu-button" onclick="completePurchase()">購入</button>
+            </div>
+        </section>
+        
+        <!-- 購入完了メッセージ -->
+        <section class="purchase-complete" id="purchase-complete" style="display: none;">
+            <h2>ご購入ありがとうございます！</h2>
+            <p>購入が完了しました。引き続きお楽しみください。</p>
+            <a href="index.html" class="menu-button">ホームに戻る</a>
+        </section>
+    </main>
+
+    <script>
+        function completePurchase() {
+            document.querySelector('.products').style.display = 'none';
+            document.getElementById('purchase-complete').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
